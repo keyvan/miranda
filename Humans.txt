@@ -1,0 +1,21 @@
+﻿/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Web developer and Programmer: Keyvan Nayyeri
+  Site: http://www.keyvan.info
+  Twitter: @keyvan
+  Location: Dallas, TX
+
+  UI developer and Web designer: Shaho Toofani
+  Site: http://www.shaho.info
+  Twitter: @shaho
+  Location: Sanandaj, Kurdistan
+
+/* SITE */
+  Standards: HTML5, CSS, CSS3
+  Components: jQuery, Modernizr, 960.gs, Scala, Play, Akka, Slick, MySQL
+  Last update: 2015/08/31
+  Language: English
+  IDE: IntelliJ IDEA, Sequel Pro
