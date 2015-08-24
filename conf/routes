@@ -5,6 +5,9 @@
 # Home page
 GET     /                           controllers.Home.index
 
+# Episode Permalink
+GET    /episode/*id             controllers.Episode.view(id: Int)
+
 # Feeds
 GET     /feed/rss                           controllers.Feed.rss
 GET     /feed/itunes                           controllers.Feed.itunes
