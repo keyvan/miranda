@@ -1,8 +1,2 @@
 #Miranda
 Miranda is a podcasting engine written in Scala, Akka, Play, Slick, and MySQL.
-
-#License
-Please read the LICENSE file in project root carefully before use. In essence, the user interface codes, artifacts, and
- templates (HTML, CSS, JavaScript code, images, and web fonts) of this project are proprietary and/or belong to
-  original copyright holders, and cannot be reused for commercial or non-commercial purposes but the rest of code is
-  open source under Apache 2.0 license.
