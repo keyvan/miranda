@@ -7,16 +7,19 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 scalaVersion := "2.11.6"
 
 val slick = "com.typesafe.slick" %% "slick" % "3.0.2"
+val nycto_hasher = "com.roundeights" %% "hasher" % "1.0.0"
 
 libraryDependencies ++= Seq(
    jdbc,
    cache,
    ws,
    specs2 % Test,
-   slick
+   slick,
+   nycto_hasher
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
+resolvers += "RoundEights" at "http://maven.spikemark.net/roundeights"
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
