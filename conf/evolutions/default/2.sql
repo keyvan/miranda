@@ -1,8 +1,12 @@
-CREATE TABLE `author` (
+CREATE TABLE `episode` (
   `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(300) NOT NULL,
-  `username` varchar(200) NOT NULL,
-  `password` varchar(500) NOT NULL,
+  `title` varchar(300) NOT NULL,
+  `summary` varchar(500) NOT NULL,
+  `body` mediumtext NOT NULL,
+  `slug` varchar(300) NOT NULL,
+  `is_published` tinyint(1) NOT NULL,
+  `views` bigint(11) unsigned NOT NULL DEFAULT 0,
+  `author_id` bigint(11) unsigned NOT NULL,
   `created` datetime  NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY  (`id`),
