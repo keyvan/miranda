@@ -1,3 +1,7 @@
+# episode schema
+
+# --- !Ups
+
 CREATE TABLE `author` (
   `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(300) NOT NULL,
@@ -9,3 +13,7 @@ CREATE TABLE `author` (
   KEY `created` (`created`),
   KEY `timestamp` (`timestamp`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+# --- !Downs
+
+DROP TABLE `author`;
