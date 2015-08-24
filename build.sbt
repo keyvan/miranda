@@ -7,17 +7,13 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 scalaVersion := "2.11.6"
 
 val slick = "com.typesafe.slick" %% "slick" % "3.0.2"
-val mysql_driver = "mysql" % "mysql-connector-java" % "5.1.32"
-val flyway = "org.flywaydb" % "flyway-core" % "3.0"
 
 libraryDependencies ++= Seq(
    jdbc,
    cache,
    ws,
    specs2 % Test,
-   slick,
-   mysql_driver,
-   flyway
+   slick
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
