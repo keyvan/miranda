@@ -1,0 +1,29 @@
+@(title: String)
+
+@master(title) {
+<body class="single">
+<!--[if lte IE 6]>
+<div class="ie6-warning">
+    <p>Warning, if you are viewing this website in Internet Explorer 6 or below some parts of it may not render
+        correctly as built it using progressive enhancement. Download a modern browser: <a href="http://firefox.com/">Firefox</a>
+        or <a href="http://google.com/chrome/">Chrome</a>.
+    </p>
+</div>
+<![endif]-->
+<!-- JS notice - We'll show it if js is disabled -->
+<p id="jsnotice">
+    Javascript is currently disabled. This site requires Javascript to function correctly.
+    Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
+<!-- /JS notice -->
+<div id="wrapper">
+    @header()
+
+    @footer()
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script>        window.jQuery || document.write('<script src="js/jquery-1.6.2.min.js"><\/script>')</script>
+<script src="js/plugins.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+}
+
