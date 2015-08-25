@@ -8,12 +8,14 @@ scalaVersion := "2.11.6"
 
 val slick = "com.typesafe.slick" %% "slick" % "3.0.2"
 val nycto_hasher = "com.roundeights" %% "hasher" % "1.0.0"
+val mysql = "mysql" % "mysql-connector-java" % "5.1.36"
 
 libraryDependencies ++= Seq(
    jdbc,
    cache,
    ws,
    specs2 % Test,
+   mysql,
    slick,
    nycto_hasher
 )
