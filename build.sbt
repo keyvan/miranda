@@ -9,6 +9,9 @@ scalaVersion := "2.11.6"
 val slick = "com.typesafe.slick" %% "slick" % "3.0.2"
 val nycto_hasher = "com.roundeights" %% "hasher" % "1.0.0"
 val mysql = "mysql" % "mysql-connector-java" % "5.1.36"
+val joda = "joda-time" % "joda-time" % "2.7"
+val joda_convert = "org.joda" % "joda-convert" % "1.7"
+val joda_mapper = "com.github.tototoshi" %% "slick-joda-mapper" % "2.0.0"
 
 libraryDependencies ++= Seq(
    jdbc,
@@ -17,7 +20,10 @@ libraryDependencies ++= Seq(
    specs2 % Test,
    mysql,
    slick,
-   nycto_hasher
+   nycto_hasher,
+   joda,
+   joda_convert,
+   joda_mapper
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
