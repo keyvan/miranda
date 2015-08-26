@@ -4,6 +4,7 @@
 
 CREATE TABLE `episode` (
   `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT,
+  `episode_number` bigint(11) unsigned NOT NULL DEFAULT 1,
   `title` varchar(300) NOT NULL,
   `summary` varchar(500) NOT NULL,
   `body` mediumtext NOT NULL,

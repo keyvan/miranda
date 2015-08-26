@@ -6,6 +6,7 @@ import com.github.tototoshi.slick.H2JodaSupport._
 
 case class Episode(
                      id: Long,
+                     episodeNumber: Long,
                      title: String,
                      summary: String,
                      body: String,
@@ -17,11 +18,13 @@ case class Episode(
                      )
 
 class Episodes(tag: Tag) extends Table[Episode](tag, "episode") {
-   def * = (id, title, summary, body, slug, downloadUrl, isPublished, views, createdDate) <>(Episode.tupled, Episode.unapply)
+   def * = (id, episodeNumber, title, summary, body, slug, downloadUrl, isPublished, views, createdDate) <>(Episode.tupled, Episode.unapply)
 
-   //def ? = (id.?, title.?, summary.?, body.?, slug.?, isPublished.?, views.?, createdDate.?).shaped.<>({ r => import r._; _1.map(_ => Episode.tupled(_1.get, _2.get, _3.get, _4.get, _5.get, _6.get, _7.get, _8.get)) }, (_: Any) => throw new Exception("Inserting into ? projection not supported."))
+   def ? = (id.?, episodeNumber.?, title.?, summary.?, body.?, slug.?, downloadUrl.?, isPublished.?, views.?, createdDate.?).shaped.<>({ r => import r._; _1.map(_ => Episode.tupled(_1.get, _2.get, _3.get, _4.get, _5.get, _6.get, _7.get, _8.get, _9.get, _10.get)) }, (_: Any) => throw new Exception("Inserting into ? projection not supported."))
 
    def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
+
+   def episodeNumber = column[Long]("episode_number")
 
    def title = column[String]("title")
 
