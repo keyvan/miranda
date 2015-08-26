@@ -2,7 +2,7 @@ package models
 
 import org.joda.time.DateTime
 import scala.slick.driver.MySQLDriver.simple._
-import com.github.tototoshi.slick.H2JodaSupport._
+import com.github.tototoshi.slick.MySQLJodaSupport._
 
 case class Episode(
                      id: Long,
