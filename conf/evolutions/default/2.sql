@@ -8,6 +8,7 @@ CREATE TABLE `episode` (
   `summary` varchar(500) NOT NULL,
   `body` mediumtext NOT NULL,
   `slug` varchar(300) NOT NULL,
+  `download_url` varchar(500) NOT NULL,
   `is_published` tinyint(1) NOT NULL,
   `views` bigint(11) unsigned NOT NULL DEFAULT 0,
   `author_id` bigint(11) unsigned NOT NULL,

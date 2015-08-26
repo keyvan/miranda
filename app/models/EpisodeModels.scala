@@ -10,13 +10,14 @@ case class Episode(
                      summary: String,
                      body: String,
                      slug: String,
+                     downloadUrl: String,
                      isPublished: Boolean,
                      views: Long,
                      createdDate: DateTime
                      )
 
 class Episodes(tag: Tag) extends Table[Episode](tag, "episode") {
-   def * = (id, title, summary, body, slug, isPublished, views, createdDate) <>(Episode.tupled, Episode.unapply)
+   def * = (id, title, summary, body, slug, downloadUrl, isPublished, views, createdDate) <>(Episode.tupled, Episode.unapply)
 
    //def ? = (id.?, title.?, summary.?, body.?, slug.?, isPublished.?, views.?, createdDate.?).shaped.<>({ r => import r._; _1.map(_ => Episode.tupled(_1.get, _2.get, _3.get, _4.get, _5.get, _6.get, _7.get, _8.get)) }, (_: Any) => throw new Exception("Inserting into ? projection not supported."))
 
@@ -29,6 +30,8 @@ class Episodes(tag: Tag) extends Table[Episode](tag, "episode") {
    def body = column[String]("body")
 
    def slug = column[String]("slug")
+
+   def downloadUrl = column[String]("download_url")
 
    def isPublished = column[Boolean]("isPublished")
 
