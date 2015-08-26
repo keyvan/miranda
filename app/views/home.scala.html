@@ -1,3 +1,10 @@
 @(title: String)
 
-@singleColumnMaster(title)
+@singleColumnMaster(title) {
+<div id="main" role="main" class="clearfix">
+    @player()
+</div>
+<div class="extra container_16 clearfix">
+    @recentEpisodes()
+</div>
+}
