@@ -38,7 +38,7 @@ object EpisodeLogic {
       Await.result(DB.run(
          Episodes.query.result
       ), 30 seconds).map(x =>
-         Episode(x.id, x.episodeNumber, x.title, x.summary, x.body, x.slug, x.downloadUrl, x.isPublished, x.views, x.createdDate)
+         Episode(x.id, x.episodeNumber, x.title, x.summary, x.body, x.slug, x.downloadUrl, x.fileLength, x.largeImageUrl, x.smallImageUrl, x.duration, x.isPublished, x.views, x.authorId, x.createdDate)
          ).toList
    }
 }
