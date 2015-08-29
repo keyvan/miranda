@@ -1,8 +1,10 @@
+@(episode: models.Episode)
+
 <article class="container_16">
     <div class="grid_11">
         <div class="kt-box" style="height: 434px;">
             <h2 class="post-title audio">
-                <a href="/">Title</a>
+                <a href="/">@episode.title</a>
             </h2>
         </div>
     </div>
@@ -17,11 +19,10 @@
         </section>
         <section class="media-summary">
             <p>
-                This is a test episode
+                @episode.summary
             </p>
             <div class="fix">
-                <text> <a href="/slug" class="kt-button keyvan-tv icon forward yellow">Listen
-                    Episode<span></span></a>
+                <text> <a href="/@@episode.slug" class="kt-button keyvan-tv icon forward yellow">Listen Episode<span></span></a>
                 </text>
             </div>
         </section>

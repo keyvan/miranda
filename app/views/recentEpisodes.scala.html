@@ -1,8 +1,11 @@
+@(episodes: List[models.Episode])
+
 <text>
     <div class="grid_16">
         <div class="kt-box inner clearfix">
             <h4 class="typical">
                 Recent Episodes</h4>
+            @episodesList(episodes)
         </div>
     </div>
 </text>

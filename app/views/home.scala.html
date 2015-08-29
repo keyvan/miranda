@@ -1,10 +1,10 @@
-@(title: String)
+@(title: String, topEpisode: models.Episode, recent: List[models.Episode])
 
 @singleColumnMaster(title) {
 <div id="main" role="main" class="clearfix">
-    @player()
+    @player(topEpisode)
 </div>
 <div class="extra container_16 clearfix">
-    @recentEpisodes()
+    @recentEpisodes(recent)
 </div>
 }

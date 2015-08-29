@@ -1,8 +1,9 @@
 package models
 
 import org.joda.time.DateTime
-import scala.slick.driver.MySQLDriver.simple._
+import slick.driver.MySQLDriver.api._
 import com.github.tototoshi.slick.MySQLJodaSupport._
+import slick.lifted.ProvenShape
 
 case class Episode(
                      id: Long,
@@ -18,27 +19,22 @@ case class Episode(
                      )
 
 class Episodes(tag: Tag) extends Table[Episode](tag, "episode") {
-   def * = (id, episodeNumber, title, summary, body, slug, downloadUrl, isPublished, views, createdDate) <>(Episode.tupled, Episode.unapply)
 
-   def ? = (id.?, episodeNumber.?, title.?, summary.?, body.?, slug.?, downloadUrl.?, isPublished.?, views.?, createdDate.?).shaped.<>({ r => import r._; _1.map(_ => Episode.tupled(_1.get, _2.get, _3.get, _4.get, _5.get, _6.get, _7.get, _8.get, _9.get, _10.get)) }, (_: Any) => throw new Exception("Inserting into ? projection not supported."))
+   def id: Rep[Long] = column[Long]("id", O.PrimaryKey, O.AutoInc)
+   def episodeNumber: Rep[Long] = column[Long]("episode_number")
+   def title: Rep[String] = column[String]("title")
+   def summary: Rep[String] = column[String]("summary")
+   def body: Rep[String] = column[String]("body")
+   def slug: Rep[String] = column[String]("slug")
+   def downloadUrl: Rep[String] = column[String]("download_url")
+   def isPublished: Rep[Boolean] = column[Boolean]("is_published")
+   def views: Rep[Long] = column[Long]("views")
+   def createdDate: Rep[DateTime] = column[DateTime]("created")
 
-   def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
+   def * : ProvenShape[Episode] =
+      (id, episodeNumber, title, summary, body, slug, downloadUrl, isPublished, views, createdDate)<>(Episode.tupled, Episode.unapply)
+}
 
-   def episodeNumber = column[Long]("episode_number")
-
-   def title = column[String]("title")
-
-   def summary = column[String]("summary")
-
-   def body = column[String]("body")
-
-   def slug = column[String]("slug")
-
-   def downloadUrl = column[String]("download_url")
-
-   def isPublished = column[Boolean]("isPublished")
-
-   def views = column[Long]("views")
-
-   def createdDate = column[DateTime]("created")
+object Episodes {
+   val query = TableQuery[Episodes]
 }

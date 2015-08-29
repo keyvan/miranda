@@ -1,0 +1,25 @@
+@(episodes: List[models.Episode])
+
+@episodes.map{episode =>
+<section class="item clearfix">
+    <div class="thumb">
+        @*<a href="/@episode.slug">
+        <img src="/"
+             alt="@episode.title"></a>*@
+        <a href="/@episode.slug">
+            <img src="/content/img/podcast-thumb.jpg" alt=">@episode.title</a>"/></a>
+    </div>
+    <div class="content">
+        <h5 class="audio">
+            <a href="/@episode.slug">@episode.title</a></h5>
+        <p>
+            @episode.summary
+        </p>
+        <a href="/@episode.slug" class="more">Listen</a>
+    </div>
+    <div class="counter">
+        <span>@episode.views</span><br/>
+        <span class="visit">views</span>
+    </div>
+</section>
+}
